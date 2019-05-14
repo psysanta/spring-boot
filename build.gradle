@@ -36,7 +36,9 @@ dependencies {
 }
 
 docker {
-    dependsOn build
+	dependsOn build
+	println "Project Name : ${project.name}"
+	println "Creating a docker image... ${project.group}/${bootJar.baseName}"
     name "${project.group}/${bootJar.baseName}"
     dockerfile file('docker/Dockerfile')
     files bootJar.archivePath

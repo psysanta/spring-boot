@@ -1,0 +1,11 @@
+version: '2.1'
+
+services:
+  spring-boot:
+    image: psysanta/demo
+    build: .
+    environment:
+      JAVA_OPTS: -Xdebug -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005,quiet=y
+    ports:
+      - 8080:8080
+      - 5005:5005
